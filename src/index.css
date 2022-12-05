@@ -40,9 +40,14 @@ footer p {
   border-radius: 7px;
   box-shadow: 0 2px 5px #ccc;
   padding: 10px;
-  width: 240px;
+  width: 90%;
   margin: 16px;
   float: left;
+}
+@media (min-width: 700px) {
+  .note {
+    width: 240px;
+  }
 }
 .note h1 {
   font-size: 1.1em;
@@ -61,7 +66,7 @@ footer p {
   margin-right: 10px;
   color: #f5ba13;
   border: none;
-
+  background-color: #fff;
   height: 36px;
   cursor: pointer;
   outline: none;
