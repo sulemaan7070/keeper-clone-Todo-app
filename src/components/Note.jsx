@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { motion } from "framer-motion";
 
 function Note(props) {
   const localItems = JSON.parse(localStorage.getItem(props.id));
@@ -41,10 +42,15 @@ function Note(props) {
       <h1>{props.title}</h1>
       <p>{props.content}</p>
       {/* <button onClick={handleEdit}>edit</button> */}
-      <button onClick={handleClick}>
+      <motion.button
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ duration: 0.3 }}
+        onClick={handleClick}
+      >
         {" "}
         <DeleteIcon sx={{ fontSize: 30 }} />{" "}
-      </button>
+      </motion.button>
     </div>
   );
 }

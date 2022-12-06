@@ -9,7 +9,10 @@ html {
 body {
   background: #eee;
 }
-
+main {
+  width: 93%;
+  margin: auto;
+}
 header {
   background-color: #f5ba13;
   width: 100%;
@@ -76,6 +79,9 @@ footer p {
 .note input {
   position: absolute;
   bottom: 20px;
+}
+.note input[type="checkbox"] {
+  accent-color: #f5ba13;
 }
 form {
   position: relative;
