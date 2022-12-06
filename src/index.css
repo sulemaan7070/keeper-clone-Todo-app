@@ -8,12 +8,12 @@ html {
 }
 body {
   background: #eee;
-  padding: 0 16px;
 }
 
 header {
   background-color: #f5ba13;
-  margin: auto -16px;
+  width: 100%;
+
   padding: 16px 32px;
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
 }
@@ -43,6 +43,7 @@ footer p {
   width: 90%;
   margin: 16px;
   float: left;
+  position: relative;
 }
 @media (min-width: 700px) {
   .note {
@@ -56,6 +57,7 @@ footer p {
 .note p {
   font-size: 1.1em;
   margin-bottom: 10px;
+
   white-space: pre-wrap;
   word-wrap: break-word;
 }
@@ -71,7 +73,10 @@ footer p {
   cursor: pointer;
   outline: none;
 }
-
+.note input {
+  position: absolute;
+  bottom: 20px;
+}
 form {
   position: relative;
   width: 480px;
@@ -104,4 +109,7 @@ form button {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   outline: none;
+}
+.warning {
+  color: #f5ba13;
 }

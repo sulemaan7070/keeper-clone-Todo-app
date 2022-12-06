@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import DeleteIcon from "@mui/icons-material/Delete";
+import CheckBox from "@mui/icons-material/CheckBox";
 function AppNew() {
+  const [lineThrough, setLineThrough] = useState(false);
   const [text, setText] = useState({
     title: "",
     content: "",
+    state: false,
   });
   const [notes, setNotes] = useState([]);
   const localItems = JSON.parse(localStorage.getItem("note"));
@@ -51,6 +54,11 @@ function AppNew() {
       });
     });
   }
+  // for line through\
+
+  function setLineThroughfun(index) {
+    return true;
+  }
 
   return (
     <>
@@ -77,12 +85,35 @@ function AppNew() {
       {/**the notes section goes here */}
       {notes.map((noteItem, index) => {
         return (
-          <div className="note" key={index}>
+          <div
+            className="note"
+            key={index}
+            style={{ textDecoration: lineThrough ? "line-through" : "none" }}
+          >
             <>
-              <h1>{noteItem.title}</h1>
-              <p>{noteItem.content}</p>
+              <input
+                type="checkbox"
+                name="mark as done"
+                id={index}
+                onClick={() => setLineThroughfun(index)}
+              />
+              <h1
+                style={{
+                  textDecoration:
+                    setLineThroughfun && lineThrough ? "line-through" : "none",
+                }}
+              >
+                {noteItem.title}
+              </h1>
+              <p
+                style={{
+                  textDecoration: lineThrough ? "line-through" : "none",
+                }}
+              >
+                {noteItem.content}
+              </p>
               <button onClick={() => deleteNote(index)}>
-                <DeleteIcon />
+                <DeleteIcon sx={{ fontSize: 30 }} />
               </button>
             </>
           </div>
