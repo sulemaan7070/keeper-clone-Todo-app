@@ -47,7 +47,7 @@ function CreateArea({ onAdd }) {
         </Alert>
       )}
 
-      <form>
+      <form className="create-area">
         <input
           onChange={textChange}
           name="title"

@@ -50,7 +50,10 @@ footer p {
 }
 @media (min-width: 700px) {
   .note {
-    width: 240px;
+    width: 270px;
+  }
+  form {
+    max-width: 480px;
   }
 }
 .note h1 {
@@ -85,7 +88,7 @@ footer p {
 }
 form {
   position: relative;
-  width: 480px;
+  width: 89%;
   margin: 30px auto 20px auto;
   background: #fff;
   padding: 15px;
